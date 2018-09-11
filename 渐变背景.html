@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景渐变</title>
+</head>
+<body id="gradient">
+	
+<script>
+	var div = document.querySelector('#gradient')
+	, gradients = [{
+	    start: [128, 179, 171],
+	    stop: [30, 41, 58]
+	}, {
+	    start: [255, 207, 160],
+	    stop: [234, 92, 68]
+	}, {
+	    start: [212, 121, 121],
+	    stop: [130, 105, 151]
+	}]
+	, total = 1000
+	, fps = 60 
+	, interval = Math.round(1000 / fps)
+	, start_val = {
+		start: [0, 0, 0],
+		stop: [0, 0, 0]
+	}
+	, speed_val = {
+		start: [0, 0, 0],
+		stop: [0, 0, 0]
+	}
+	, currentIndex = 0
+	, next = 1
+	, colorLeft = []
+	, colorRight = []
+	, color1 
+	, count = 0
+	, countNum = 480
+
+	function set_color () {
+		for(var key in start_val){
+			if(start_val.hasOwnProperty(key)){
+				for(var i = 0; i < 3; i++) {
+					start_val[key][i] = gradients[currentIndex][key][i]
+					console.log(currentIndex)
+					speed_val[key][i] = computed_speed(gradients[next][key][i], start_val[key][i])
+				}
+			}
+		}
+	}
+
+	function computed_speed (a, b) {
+		return (a - b)/countNum
+	}
+
+	function gradient () {
+		for(var key in start_val){
+			if(start_val.hasOwnProperty(key)){
+				for(var i = 0; i < 3; i++) {
+					start_val[key][i] += speed_val[key][i]
+				}
+			}
+		}
+		div.style.backgroundImage = `linear-gradient(-90deg, rgb(${start_val.start[0]}, ${start_val.start[1]}, ${start_val.start[2]}), rgb(${start_val.stop[0]}, ${start_val.stop[1]}, ${start_val.stop[2]}))`
+		count++
+		if(count > countNum) {
+			count = 0
+			currentIndex = (currentIndex + 1 < gradients.length - 1) ? currentIndex + 1 : 0;
+			next = (next + 1 < gradients.length - 1) ? next + 1 : 0;
+			set_color()
+		}
+	}
+	set_color();
+	var timer = setInterval(gradient, interval)
+</script>
+</body>
+</html>
