@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;list-style: none;}
+        img{border:0;}
+        .box{
+            width:400px;
+            height:300px;
+            margin:100px auto;
+            position:relative;
+            overflow: hidden;
+            color:#fff;
+        }
+        .img{
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 3;
+            transition:.35s;
+        }
+        .cover p{
+            display:block;
+            position:absolute;
+            left:-100%;
+            top:50%;
+            padding:10px;
+            font-size:12px;
+            width:100%;
+            transition:.2s ;
+            transform:rotate(-180deg);
+            text-align: center;
+            font-style: italic;
+            color:#999999;
+        }
+        .img{
+
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            width:100%;
+            position:absolute;
+            left:0;
+            height:100%;
+            top:0;
+            transform:scale(0);
+            transition:.35s;
+            background: rgba(27, 27, 27, 1);
+            pointer-events: none;
+        }
+        .cover h5{
+            width:100%;
+            text-align: center;
+            position: absolute;
+            padding:10px 0;
+            font-size: 20px;
+            transition:.15s;
+            background: rgba(27, 27, 27, 1);
+            top:0;
+        }
+
+        .box:hover .img{
+            transform:rotate(180deg);
+            left:100%;
+        }
+        .box:hover .cover{
+            transition-delay: .2s;
+            transform:scale(1);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+    <div class="cover">
+        <h5>HELLO HOVER</h5>
+        <p>jfafjieja;fsafafsasfffffffffffffff</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;list-style: none;}
+        img{border:0;}
+        .box{
+            width:400px;
+            height:300px;
+            margin:100px auto;
+            position:relative;
+            overflow: hidden;
+            color:#fff;
+        }
+        .img{
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            transition:.35s;
+        }
+        .cover h5{
+            padding:10px;
+        }
+        .cover p{
+            display:block;
+            position:absolute;
+            width:100%;
+            top:40%;
+            padding:10px;
+            font-size:12px;
+            font-style: italic;
+            color:#fff;
+            transition: .35s .2s;
+            transform:scale(5);
+        }
+        .img{
+
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            width:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            opacity:0;
+            transition:.35s;
+            background:rgba(0,0,0,.5);
+            pointer-events: none;
+            text-align: center;
+            height:100%;
+            z-index: 3;
+        }
+        .cover h5{
+            width:100%;
+            padding:10px;
+            position:absolute;
+            top:20%;
+            transition:.35s;
+            transform:scale(5);
+            font-size:20px;
+            background: rgba(35, 35, 35, 1);
+        }
+        .box:hover .cover{
+            opacity:100;
+        }
+        .box:hover .cover h5{
+            transform:scale(1);
+        }
+        .box:hover .cover p{
+            transform:scale(1);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+    <div class="cover">
+        <h5>HELLO HOVER</h5>
+        <p>jfafjieja;fsafafsasfffffffffffffff</p>
+    </div>
+</div>
+</body>
+</html>

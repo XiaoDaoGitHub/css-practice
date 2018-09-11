@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;list-style: none;}
+        img{border:0;}
+        .box{
+            width:400px;
+            height:300px;
+            margin:100px auto;
+            position:relative;
+            overflow: hidden;
+            color:#fff;
+        }
+        .img{
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            transition:.35s;
+        }
+        .cover h5{
+            padding:10px;
+        }
+        .cover p{
+            display:block;
+            position:absolute;
+            right:0;
+            bottom:0;
+            padding:10px;
+            font-size:12px;
+            font-style: italic;
+            color:#999999;
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            width:100%;
+            position:absolute;
+            left:0;
+            top:40%;
+            transform: translate(-1px,-20px) rotate(-36deg) rotateX(90deg);
+            transition:.35s;
+            background: rgba(27, 27, 27, 1);
+            pointer-events: none;
+            height:30%;
+            z-index: 5;
+        }
+        .box:before,.box:after{
+            content:"";
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            background:rgba(0,0,0,.5);
+            transition:.5s;
+        }
+        .box:before{
+            z-index: 4;
+            transform: translateX(150%) skew(-54deg);
+        }
+        .box:after{
+            z-index: 4;
+            transform: translateX(-150%) skew(-54deg);
+        }
+        .box:hover .cover{
+            transition-delay: .5s;
+            transform:  rotate(0) rotateX(0);
+        }
+        .box:hover:before{
+            transform: translateX(50%) skew(-54deg);
+        }
+        .box:hover:after{
+            transform: translateX(-50%) skew(-54deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+    <div class="cover">
+        <h5>HELLO HOVER</h5>
+        <p>jfafjieja;fsafafsasfffffffffffffff</p>
+    </div>
+</div>
+</body>
+</html>

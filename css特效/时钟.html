@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:140px;
+            height:139px;
+            text-align:center;
+            border:1px solid #9fA2Ad;
+            border-radius:5px;
+            background-image:linear-gradient(rgb(238,239,241) 0,rgba(194,197,209,.9) 50%,rgb(211,213,222) 50%,rgb(225,227,232) 100%);
+            box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+            position:relative;
+        }
+        .box:before{
+            content:"";
+            width:100%;
+            height:1px;
+            background-color:#656871;
+            box-shadow:0 -1px 0 rgba(255,255,255,.3),0 1px 0 rgba(255,255,255,.6);
+            position:absolute;
+            left:0;top:49%;
+        }
+        .boxshadow,.boxshadow2{
+            width:140px;
+            height:10px;
+            border:1px solid #9fA2Ad;
+            border-radius:5px;
+            border-top:none;
+            background-image:linear-gradient(rgb(238,239,241) 0,rgba(194,197,209,.9) 100%);
+            box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+            position:absolute;
+
+        }
+        .boxshadow{
+            left:-1px;
+            bottom:-3px;
+            z-index:-1;
+        }
+        .boxshadow2{
+            left:-1px;
+            bottom:-5px;
+            z-index:-2;
+        }
+        .txt{
+            position:absolute;
+            width:100%;
+            line-height:139px;
+            text-align: center;
+            font-size:100px;
+        }
+        .guang{
+            position:absolute;
+            left:0;
+            top:49%;
+            width:100%;
+            height:50%;
+            background-image:linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0))
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="txt">12</div>
+    <div class="boxshadow"></div>
+    <div class="boxshadow2"></div>
+    <div class="guang"></div>
+</div>
+</body>
+</html>

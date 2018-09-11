@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{list-style: none;padding:0;margin:0}
+        .div1{
+            width:200px;
+            height:400px;
+            margin:50px auto;
+            perspective: 500px;
+            position: relative;
+        }
+        .div1:hover .div2{
+            transform:rotateY(180deg);
+        }
+        .div2{
+            transition:3s;
+        }
+        .div2,.z,.f{
+            position:absolute;
+            transform-style: preserve-3d;
+            left:0;
+            top:0;
+            background:#fe9601;
+            width:100%;
+            height:100%;
+        }
+        .div1 img{
+            background-size:cover;
+        }
+        .z{
+            transform:translateZ(10px);
+        }
+        .f{
+            transform:translateZ(-10px) rotateY(180deg);
+
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <div class="z"><img src="../CSS实现手风琴效果/images/2.png" class="z" alt=""></div>
+        <div class="f"><img src="../CSS实现手风琴效果/images/4.png" class="z" alt=""></div>
+    </div>
+</div>
+</body>
+</html>

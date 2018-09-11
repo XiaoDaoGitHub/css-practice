@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;list-style: none;}
+        img{border:0;}
+        .box{
+            width:400px;
+            height:300px;
+            margin:100px auto;
+            position:relative;
+            color:#fff;
+            overflow: hidden;
+        }
+        .img,.cover{
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            transition:.35s;
+        }
+        .cover{
+            background: rgba(27, 27, 27, 1);
+            pointer-events: none;
+        }
+        .cover h5{
+            width:100%;
+            height:35px;
+            line-height: 35px;
+            text-align: center;
+            background:#0F0F0F;
+            position: absolute;
+            top:-20%;
+            font-size:20px;
+            transition:.35s;
+        }
+        .cover p{
+            display:block;
+            position:absolute;
+            text-align: center;
+            top:-50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            padding:10px;
+            font-size:12px;
+            font-style: italic;
+            color:#999999;
+            transition:.35s;
+        }
+        .img{
+            z-index: 3;
+
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            background: rgba(27, 27, 27, 1);
+            opacity:0;
+        }
+        .box:hover .img{
+           opacity:0;
+            transform:scale(.5) rotate(360deg);
+        }
+        .box:hover .cover{
+            opacity:100;
+        }
+        .box:hover .cover h5{
+            transition-delay: .35s;
+           top:20%;
+        }
+        .box:hover .cover p{
+            transition-delay: .45s;
+            top:50%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+    <div class="cover">
+        <h5>HELLO HOVER</h5>
+        <p>jfafjieja;fsafafsasfffffffffffffff</p>
+    </div>
+</div>
+</body>
+</html>

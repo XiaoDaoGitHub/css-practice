@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;list-style: none;}
+        img{border:0;}
+        .box{
+            width:400px;
+            height:300px;
+            margin:100px auto;
+            position:relative;
+            color:#fff;
+        }
+        .img,.cover{
+            width:100%;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            transition:.35s;
+        }
+        .cover h5{
+            padding:10px;
+        }
+        .cover p{
+            display:block;
+            position:absolute;
+            right:0;
+            bottom:0;
+            padding:10px;
+            font-size:12px;
+            font-style: italic;
+            color:#999999;
+        }
+        .img{
+            z-index: 3;
+
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            background: rgba(27, 27, 27, 1);
+            transform:scale(.5);
+            pointer-events: none;
+        }
+        .box:hover .img{
+            transform:scale(.7);
+        }
+        .box:hover .cover{
+            transform:scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+        <div class="cover">
+            <h5>HELLO HOVER</h5>
+            <p>jfafjieja;fsafafsasfffffffffffffff</p>
+        </div>
+    </div>
+</body>
+</html>

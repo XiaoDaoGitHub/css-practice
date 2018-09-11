@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        list-style: none;
+        border:0;
+    }
+    .box{
+        position:relative;
+        width:260px;
+        height:260px;
+        transform-style: preserve-3d;
+        margin:100px auto;
+        border-radius:50%;
+    }
+    .img,.cover{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        border-radius:50%;
+        top:0;
+        left:0;
+    }
+    .img{
+        z-index: 4;
+        transform-origin:right center;
+        transition:.5s;
+    }
+    .img img{
+        width:100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .img:after{
+        position:absolute;
+        left:0;
+        top: 0;
+        content:"";
+        width:100%;
+        height: 100%;
+        border-radius:50%;
+        box-shadow:inset 0 0 0 20px rgba(255,255,255,.7);
+        transition:.6s;
+    }
+
+
+    .cover{
+        background:rgba(0,0,0,.8);
+        opacity:0;
+        text-align: center;
+        color:#fff;
+        left:0;
+        transition:.5s;
+        transform-origin: left center;
+        transform:rotateY(90deg);
+        pointer-events: none;
+    }
+    .cover h4{
+        height:20%;
+        padding:30% 0 0 0;
+        font-size:22px;
+        margin:0 30px;
+        border-bottom: 1px solid rgba(255,255,255,.7);
+    }
+    .cover h6{
+        padding:10px 5px;
+    }
+    .box:hover .img{
+        transform:rotateY(90deg);
+        opacity: 0;
+    }
+    .box:hover .cover{
+        transition-delay: .5s;
+        transform:rotateY(0);
+        opacity:100;
+
+    }
+</style>
+<body>
+<div class="box">
+    <div class="img"><img src="../CSS实现手风琴效果/images/3.png" alt=""></div>
+    <div class="cover">
+        <h4>Hend JIF</h4>
+        <h6>fsalfi</h6>
+    </div>
+</div>
+</body>
+</html>
